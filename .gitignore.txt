@@ -1,3 +1,0 @@
-.idea
-dm_files
-media
