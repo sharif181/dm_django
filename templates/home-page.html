@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Them</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-5 bg-light">
+    <div class="d-flex justify-content-center">
+        <h5 class="display-5"> Find the best consumer </h5>
+    </div>
+    <div class="row d-flex justify-content-between">
+        <div class="col-6">
+            <form method="post" action="/customer-list/">
+                {% csrf_token %}
+                <label>Choose a product:</label>
+                <select name='product' class="form-control" required>
+                    <option value="Wines" selected>Wines</option>
+                    <option value="Sweets">Sweets</option>
+                    <option value="Meat">Meat</option>
+                    <option value="Fruits">Fruits</option>
+                    <option value="Fish">Fish</option>
+                    <option value="Gold">Gold</option>
+                </select>
+                <label for="cars">Choose Consuming level:</label>
+                <select name="level" class="form-control" required>
+                    <option value="Low consumer" selected>Low consumer</option>
+                    <option value="Frequent consumer">Frequent consumer</option>
+                    <option value="Biggest consumer">Biggest consumer</option>
+                </select>
+                <button class="btn btn-info form-control mt-2"> Submit</button>
+            </form>
+        </div>
+        <div class="col-6">
+            <img src="{% static '/images/shop.jpg' %}" width="350px" alt="none">
+        </div>
+    </div>
+</div>
+</body>
+</html>
